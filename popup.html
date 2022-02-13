@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Hatathon</title>
+  <style>
+    body {
+      width: 400px;
+      height: 300px;
+    }
+
+    #data, #data2, #when, #where, #key {
+      display: none;
+    }
+
+    h2 {
+      /*margin-bottom: 0px;*/
+      font-weight: lighter;
+      font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      color: #282728;
+      font-weight:bolder;
+      font-size: 20px;
+      line-height: 20px;
+      position: relative;
+      left: 10px;
+      top: 10px;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <!-- <link rel="stylesheet" type="text/css" href="buttons.css"> -->
+  <link rel="stylesheet" href="./Css/chatBot.css">
+  <link rel="stylesheet" href="./Css/main.css">
+  <script src="konami.js"></script>
+  <script src="license.js"></script>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <h2 id="title">V<span id="titlex">i</span>sitory</h2>
+  <br/>
+  <h3>&nbsp Would you allow us to use your search history?</h3>
+  <h4>&nbsp&nbsp It'll be used only for functioning this application. </h4>
+  <br/>
+  <div id="content" style="color:white">
+    <button href="#" id="json" style="background-color:#0479a8; color:rgb(255, 255, 255); width: 90px; height: 50px; position: relative; left: 20px;top: 10px;" >YES</button>
+    <button href="#" id="reject" style="background-color:#0479a8; color:rgb(255, 255, 255); width: 90px; height: 50px; position: relative; left: 30px;top: 10px;" >NO</button>
+    <p style="color: #646569; padding: 20px">instruction: please choose y/n button above first!!!!!!!!!! </p>
+  </div>
+  
+  <!--chatbot from here-->
+  <div class="chatBot">
+    <div class="chatBotHeading">
+      <label for="chatTextBox" id="chatOpenTrigger" class="">Find your search history!</label>
+    </div>
+    <hr class="">
+    <div class="chatBody">
+      <div class="chatSession">
+      </div>
+    </div>
+    <form class="chatForm" autocomplete="off">
+      <div class="typingArea">
+        <textarea name="chatInput" id="chatTextBox" class="textArea"
+          onblur="if(!validateMessage()) this.value = 'Type here...'"
+          onfocus="if(!validateMessage()) this.value = ''"></textarea>
+        <button type="submit" class="sendButton" id="sendButton"><img src="./Gfx/send.svg" alt="Send"
+            srcset=""></button>
+      </div>
+      <button type="button" id="chatCloseTrigger">Close Chat!</button>
+    </form>
+  </div>
+  <!-- JavaScripts from native directory -->
+  <script src="./Js/chatBotConversation.js"></script>
+  <script src="./Js/chatBotValidate.js"></script>
+  <script src="./Js/chatBotAnimate.js"></script>
+  <script src="./Js/chatBotCustom.js"></script>
+
+
+  <!-- JavaScripts for GitHub buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!--chatbot ends here-->
+
+  <div id="data"></div>
+  <div id="data2"></div>
+  <div id="when"></div>
+  <div id="where"></div>
+  <div id="key"></div>
+</body>
+
+</html>
